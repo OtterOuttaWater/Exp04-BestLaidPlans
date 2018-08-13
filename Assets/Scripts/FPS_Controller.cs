@@ -33,7 +33,8 @@ public class FPS_Controller : MonoBehaviour {
 
         rotX = Input.GetAxis("Mouse X") * sensitivity;
         rotY -= Input.GetAxis("Mouse Y") * sensitivity;
-        rotY = Mathf.Clamp(rotY, -60f, 60f);   //Keeps you from going upside down
+        rotY = Mathf.Clamp(rotY, -60f, 60f);
+
 
 
 

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,20 +8,28 @@ public class Character : MonoBehaviour
     public float JumpHeight = 2f;
     public float Gravity = -9.81f;
     public float GroundDistance = 0.2f;
-    public float DashDistance = 5f;
+    public float sensitivity = 2f;
+
     public LayerMask Ground;
     public Vector3 Drag;
+
+    public GameObject eyes;
 
     private CharacterController _controller;
     private Vector3 _velocity;
     private bool _isGrounded = true;
     private Transform _groundChecker;
 
+    private float _rotX;
+    private float _rotY;
+
+
 
     void Start()
     {
         _controller = GetComponent<CharacterController>();
         _groundChecker = transform.GetChild(0);
+        Cursor.visible = false;
     }
 
     void Update()
@@ -32,16 +40,18 @@ public class Character : MonoBehaviour
 
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         _controller.Move(move * Time.deltaTime * Speed);
-        if (move != Vector3.zero)
-            transform.forward = move;
+        //if (move != Vector3.zero)
+        //transform.forward = move;
+
+        _rotX = Input.GetAxis("Mouse X") * sensitivity;
+        _rotY -= Input.GetAxis("Mouse Y") * sensitivity;
+        _rotY = Mathf.Clamp(_rotY, -60f, 60f);   //Keeps you from going upside down
+
+        transform.Rotate(0, _rotX, 0);
+        eyes.transform.localRotation = Quaternion.Euler(_rotY, 0, 0);
 
         if (Input.GetButtonDown("Jump") && _isGrounded)
             _velocity.y += Mathf.Sqrt(JumpHeight * -2f * Gravity);
-        if (Input.GetButtonDown("Dash"))
-        {
-            Debug.Log("Dash");
-            _velocity += Vector3.Scale(transform.forward, DashDistance * new Vector3((Mathf.Log(1f / (Time.deltaTime * Drag.x + 1)) / -Time.deltaTime), 0, (Mathf.Log(1f / (Time.deltaTime * Drag.z + 1)) / -Time.deltaTime)));
-        }
 
 
         _velocity.y += Gravity * Time.deltaTime;
