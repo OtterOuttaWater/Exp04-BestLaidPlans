@@ -8365,7 +8365,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh27074
+  m_Name: pb_Mesh17126
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -12743,6 +12743,23 @@ Prefab:
         type: 2}
       propertyPath: jumpForce
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 20917943335404920, guid: 4634ac6f6bd6d8d46887a982a025f9f9,
+        type: 2}
+      propertyPath: near clip plane
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665091128275930, guid: 4634ac6f6bd6d8d46887a982a025f9f9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665091128275930, guid: 4634ac6f6bd6d8d46887a982a025f9f9, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665091128275930, guid: 4634ac6f6bd6d8d46887a982a025f9f9, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.79
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4634ac6f6bd6d8d46887a982a025f9f9, type: 2}
@@ -21407,6 +21424,23 @@ Transform:
   m_Father: {fileID: 1020749563}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &625954914 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1783430752133428, guid: 4634ac6f6bd6d8d46887a982a025f9f9,
+    type: 2}
+  m_PrefabInternal: {fileID: 389985412}
+--- !u!65 &625954918
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 625954914}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.11, y: 0.18, z: 0.54}
+  m_Center: {x: 0.43, y: -0.35, z: 0.9}
 --- !u!1 &670306138
 GameObject:
   m_ObjectHideFlags: 0
@@ -44049,7 +44083,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh15594
+  m_Name: pb_Mesh17252
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
