@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 95275500697955806}
   - component: {fileID: 114757603875203208}
   m_Layer: 0
-  m_Name: SpinnyCylinder
+  m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
