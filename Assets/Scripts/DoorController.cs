@@ -8,6 +8,9 @@ public class DoorController : MonoBehaviour {
     public GameObject Door;
     public bool doorIsOpening;
     public float doorOpenY;
+    public bool longRange;
+
+    private bool inRange;
 
 	// Use this for initialization
 	void Start ()
@@ -32,12 +35,32 @@ public class DoorController : MonoBehaviour {
             doorIsOpening = false;
         }
 
+        if (inRange == true)
+        {
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                doorIsOpening = true;
+            }
+        }
+
 
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        inRange = true;
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        inRange = false;
+    }
+
+
     void OnMouseDown()
     {
-        doorIsOpening = true;
+        if (longRange == true)
+            doorIsOpening = true;
         // if we click on the button, door must start to open???? (Switch this for a 'press f to door'), make the box collider a trigger
     }
 }
